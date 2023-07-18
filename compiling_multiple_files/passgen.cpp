@@ -12,3 +12,10 @@ int main(void){
     std::string password= pg.Generate(passLen);
     std::cout<<"Your password is: "<<password;
 }
+
+
+/*
+ *  g++ -Wall passgen.cpp pwgen_fn.cpp -o passgen
+
+    g++ compiler -Wall (all the warnings are on) listing the all files and saving the output as passgen
+ */
