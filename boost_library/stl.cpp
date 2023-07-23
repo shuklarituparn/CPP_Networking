@@ -27,3 +27,7 @@ int main(void){
 
 
 }
+
+//g++ -Wall -ansi -std=c++11 stl.cpp -o stl  (this is the compile statement)
+
+//after this just ./stl
