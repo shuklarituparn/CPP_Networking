@@ -19,6 +19,8 @@ void workerThread(const boost::shared_ptr<boost::asio::io_service>& iosvc, int c
 
 int main(){
     boost::shared_ptr<boost::asio::io_service> io_svc(new boost::asio::io_service); //shared pointer to manage the io_service
+
+    //initiate the io_service object in the shared_ptr to make it copyable to the workerThread function
     boost::shared_ptr<boost::asio::io_service::work> worker(new boost::asio::io_service::work(*io_svc)); //helps exiting early
 
     std::cout<<"Press Enter to exit! "<<std::endl;
