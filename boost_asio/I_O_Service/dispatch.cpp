@@ -32,9 +32,9 @@ void Post(int i) {
 
 void Running(boost::shared_ptr<boost::asio::io_service> iosvc) {
     for( int x = 0; x < 5; ++x ) {
-        iosvc->dispatch(boost::bind(&Dispatch, x));
-        iosvc->post(boost::bind(&Post, x));
-        boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
+        iosvc->dispatch(boost::bind(&Dispatch, x)); //the task run immediately
+        iosvc->post(boost::bind(&Post, x)); //collected till everything is finished
+       boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
     }
 }
 int main(void) {
